@@ -28,7 +28,6 @@ function onGalleryContainerClick(event) {
     event.preventDefault();
     const lightbox = new SimpleLightbox(".gallery a", {
       captionsData: "alt",
-      captions: true,
       captionDelay: 250,
     });
   }
