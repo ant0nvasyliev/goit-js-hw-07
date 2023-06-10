@@ -1,24 +1,16 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-// рендер
 const galleryContainer = document.querySelector(".gallery");
 const cardsMarkup = createGalleryCardsMarkup(galleryItems);
 galleryContainer.insertAdjacentHTML("beforeend", cardsMarkup);
 
-// Реалізація делегування на ul.gallery і отримання url великого зображення. Заборона поведінки за замовчуванням.
-galleryContainer.addEventListener("click", onGalleryContainerClick);
-function onGalleryContainerClick(event) {
-  if (event.target.classList.contains("gallery__image")) {
-    event.preventDefault();
-    const lightbox = new SimpleLightbox(".gallery a", {
-      captionsData: "alt",
-      captionDelay: 250,
-    });
-  }
-}
-
-// розмітка
+document.addEventListener("DOMContentLoaded", function () {
+  var lightbox = new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    captionDelay: 250,
+  });
+});
 
 function createGalleryCardsMarkup(galleryItems) {
   return galleryItems
